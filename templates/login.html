@@ -1,0 +1,32 @@
+{% from 'bootstrap5/form.html' import render_form %}
+<html>
+<head>
+    {{ bootstrap.load_css() }}
+</head>
+<body class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title">Login</h2>
+                    {{ render_form(form) }}
+                    <hr>
+                    <p><a href="{{ url_for('reset_password') }}">Forgot Password?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ bootstrap.load_js() }}
+</body>
+</html>

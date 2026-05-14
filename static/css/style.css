@@ -1,0 +1,34 @@
+
+.category-filter-btn {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.category-filter-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.category-filter-btn:active {
+    transform: scale(0.95);
+}
+
+.border-dashed {
+    border-style: dashed !important;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+}
+
+.col-md-4:not(.no-drag) .card {
+    cursor: grab;
+}
+
+.col-md-4.sortable-disabled .card {
+    cursor: default;
+}
+
+.sortable-ghost {
+    opacity: 0.4;
+    border: 2px dashed #0d6efd !important;
+}
+
